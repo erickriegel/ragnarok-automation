@@ -1,0 +1,5 @@
+hooks:
+  after_clone:
+    - name: Exécuter une commande après le clonage
+      command: |
+        npm install
