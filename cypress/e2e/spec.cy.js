@@ -6,7 +6,7 @@ describe('My First Test', () => {
 
     // Should be on a new URL which
     // includes '/commands/actions'
-    cy.url().should('include', '/commands/actions')
+    cy.url().should('include', '/command/actions')
 
     // Get an input, type into it
     cy.get('.action-email').type('fake@email.com')
