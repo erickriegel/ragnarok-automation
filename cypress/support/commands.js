@@ -23,3 +23,14 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('login', (username, password) => {
+    cy.visit('/')
+    cy.get('[formcontrolname="login"]').type(username)
+    cy.get('[formcontrolname="password"]').type(password)
+    cy.get('#submit-login-form').click()
+    cy.url().should('include', '/home-workspace')
+    
+    cy.get('[data-test-element-id="show-welcome-message-button"]')
+    cy.get('[data-test-element-id="show-dashboard-button"]')
+  })
