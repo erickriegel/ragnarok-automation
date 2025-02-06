@@ -28,7 +28,7 @@ describe('Navigate to administration menus', () => {
 
   it('Verify Projets Menu', () => {
     // Clique sur "Projects"
-    cy.get('[data-test-navbar-field-id="nav-bar-menu-projects"]').click() 
+    cy.get('[data-test-navbar-field-id="nav-bar-menu-project"]').click() 
     cy.url().should('include', '/administration-workspace/projects')    
   })
 
