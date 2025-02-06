@@ -9,6 +9,6 @@ module.exports = defineConfig({
     },
     //specPattern: 'cypress/integration/**/*.js',
     video: false,
-    //testIsolation: false
+    testIsolation: false
   },
 });
