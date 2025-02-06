@@ -8,6 +8,7 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
     //specPattern: 'cypress/integration/**/*.js',
-    video: false
+    video: false,
+    testIsolation: false
   },
 });

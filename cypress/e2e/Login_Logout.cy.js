@@ -3,5 +3,8 @@ describe('Access to Home Page', () => {
     cy.login('admin', 'admin')
 
     cy.get('[data-test-element-id=custom-report-link')
+    cy.logout()
+
+
   })
 })

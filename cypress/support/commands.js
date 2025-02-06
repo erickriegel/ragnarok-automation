@@ -34,3 +34,9 @@ Cypress.Commands.add('login', (username, password) => {
     cy.get('[data-test-element-id="show-welcome-message-button"]')
     cy.get('[data-test-element-id="show-dashboard-button"]')
   })
+
+  Cypress.Commands.add('logout', () => {
+    cy.get('[data-test-navbar-field-id=user-menu]').click()
+    cy.get('[data-test-menu-item-id=logout]').click();
+    cy.contains('Vous êtes déconnecté')
+  })
