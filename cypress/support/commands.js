@@ -40,3 +40,5 @@ Cypress.Commands.add('login', (username, password) => {
     cy.get('[data-test-menu-item-id=logout]').click();
     cy.contains('Vous êtes déconnecté')
   })
+
+  

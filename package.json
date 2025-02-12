@@ -4,5 +4,8 @@
   },
   "scripts": {
     "cy:open": "cypress open"
+  },
+  "dependencies": {
+    "npm-check-updates": "^17.1.14"
   }
 }
