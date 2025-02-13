@@ -1,7 +1,7 @@
-
-
 Cypress.Commands.add('closeDialogBox', () => {
-    cy.get('[data-test-dialog-button-id="close"]').click()
+    cy.get('[data-test-dialog-button-id="close"]')
+      .should('be.visible')
+      .click()
   })
 
 Cypress.Commands.add('goTo', (menu) => {
@@ -12,7 +12,9 @@ Cypress.Commands.add('goTo', (menu) => {
       menuPilotage: 'custom-report-link',
       menuActions: 'fake-action-word'
     };
-    cy.get('[data-test-element-id=' + (menuConfig[menu] || menu) + ']').click()
+    cy.get('[data-test-element-id=' + (menuConfig[menu] || menu) + ']')
+      .should('be.visible')
+      .click()
   })
 
 Cypress.Commands.add('goToMenu', (menu) => {
@@ -22,7 +24,6 @@ Cypress.Commands.add('goToMenu', (menu) => {
       menuAutomatisation: 'automation',
       menuAide: 'help',
       menuFiltreProjets: 'project-filter',
-
       //Page Administration
       menuUtilisateurs: 'nav-bar-menu-users',
       menuProjets: 'nav-bar-menu-projects',
@@ -31,18 +32,17 @@ Cypress.Commands.add('goToMenu', (menu) => {
       menuServeurs: 'nav-bar-menu-servers',
       menuProfils: 'nav-bar-menu-profiles',
       menuSysteme: 'nav-bar-menu-system',
-
       //Sortie
       menuExit: 'exit'
-    };
-  
+    };  
     // Aller au menu
-    cy.get('[data-test-navbar-field-id=' + (menuConfig[menu] || menu) + ']').click()
+    cy.get('[data-test-navbar-field-id=' + (menuConfig[menu] || menu) + ']')
+      .should('be.visible')
+      .click()
   })
   
 
   Cypress.Commands.add('goToSubMenu', (menu, subMenu) => {
-
     const subMenuConfig = {
       //Automatisation
       sousMenuAutomaticien: 'programmer',
@@ -55,11 +55,9 @@ Cypress.Commands.add('goToMenu', (menu) => {
       sousMenuServeurs: 'servers',
       sousMenuProfils: 'profiles',
       sousMenuSysteme: 'system'
-    };
-  
+    };  
     // Aller au menu principal
-    cy.goToMenu(menu)
-  
+    cy.goToMenu(menu)  
     // Cliquer sur le sous-menu
     cy.get('.nav-bar-link[data-test-menu-item-id=' + subMenuConfig[subMenu] || subMenu + ']')
       .should('be.visible')
