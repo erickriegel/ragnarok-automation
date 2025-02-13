@@ -30,6 +30,7 @@ Cypress.Commands.add('actionToPerform', (dialogAction) => {
     };
   cy.get('[data-test-dialog-button-id=' + (menuConfig[dialogAction] || dialogAction) + ']')
   //.should('be.visible')
+  .should('exist')
   .click()
 })
 
@@ -45,6 +46,7 @@ Cypress.Commands.add('fillIframe', (description) => {
     const $body = $iframe.contents().find('body[role="textbox"]')
     cy.wrap($body)
       //.should('be.visible')
+      .should('exist')
       .type(description)
   });    
 })
@@ -66,8 +68,10 @@ Cypress.Commands.add('createNewElement', (elementToCreate) => {
     };
   cy.get('[data-test-toolbar-button-id="create-button"]')
     //.should('be.visible')
+    .should('exist')
     .click()
   cy.get('[data-test-menu-item-id=' + (menuConfig[elementToCreate] || elementToCreate) + '] > .ant-menu-title-content')
     //.should('be.visible')
+    .should('exist')
     .click()
 })

@@ -28,7 +28,9 @@ Cypress.Commands.add('login', (username, password) => {
     cy.visit('/')
     cy.get('[formcontrolname="login"]').type(username)
     cy.get('[formcontrolname="password"]').type(password)
-    cy.get('#submit-login-form').click()
+    cy.get('#submit-login-form')
+      .should('exist')
+      .click()
     cy.url().should('include', '/home-workspace')
     
     cy.get('[data-test-element-id="show-welcome-message-button"]')
@@ -36,8 +38,12 @@ Cypress.Commands.add('login', (username, password) => {
   })
 
   Cypress.Commands.add('logout', () => {
-    cy.get('[data-test-navbar-field-id=user-menu]').click()
-    cy.get('[data-test-menu-item-id=logout]').click();
+    cy.get('[data-test-navbar-field-id=user-menu]')
+      .should('exist')
+      .click()
+    cy.get('[data-test-menu-item-id=logout]')
+      .should('exist')
+      .click();
     cy.contains('Vous êtes déconnecté')
   })
 
