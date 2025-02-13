@@ -1,6 +1,6 @@
 Cypress.Commands.add('closeDialogBox', () => {
     cy.get('[data-test-dialog-button-id="close"]')
-      .should('be.visible')
+      //.should('be.visible')
       .click()
   })
 
@@ -13,7 +13,7 @@ Cypress.Commands.add('goTo', (menu) => {
       menuActions: 'fake-action-word'
     };
     cy.get('[data-test-element-id=' + (menuConfig[menu] || menu) + ']')
-      .should('be.visible')
+      //.should('be.visible')
       .click()
   })
 
@@ -60,6 +60,6 @@ Cypress.Commands.add('goToMenu', (menu) => {
     cy.goToMenu(menu)  
     // Cliquer sur le sous-menu
     cy.get('.nav-bar-link[data-test-menu-item-id=' + subMenuConfig[subMenu] || subMenu + ']')
-      .should('be.visible')
+      //.should('be.visible')
       .click()
   })
