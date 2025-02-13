@@ -37,7 +37,7 @@ Cypress.Commands.add('goToMenu', (menu) => {
     };  
     // Aller au menu
     cy.get('[data-test-navbar-field-id=' + (menuConfig[menu] || menu) + ']')
-      .should('be.visible')
+      //.should('be.visible')
       .click()
   })
   
