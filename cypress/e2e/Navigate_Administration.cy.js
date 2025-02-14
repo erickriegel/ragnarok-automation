@@ -1,6 +1,6 @@
 describe('Navigate to administration menus', () => {
   it('Goes to Administration Menu and verify SUb-Menus', () => {
-    cy.login('admin', 'admin')
+    cy.login('admin')
     cy.goToSubMenu('menuAdministration', 'sousMenuUtilisateurs')
     cy.url().should('include', '/administration-workspace/users/manage')
     cy.goToMenu('menuProjets')

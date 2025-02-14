@@ -1,6 +1,6 @@
 describe('Navigate from main page', () => {
     it('Goes to different workspaces', () => {
-      cy.login('admin', 'admin') 
+      cy.login('admin') 
       cy.goTo('menuExigences')
       cy.url().should('include', '/requirement-workspace')
       cy.goTo('menuCasDeTest')  

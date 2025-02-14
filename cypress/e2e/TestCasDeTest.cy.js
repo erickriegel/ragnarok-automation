@@ -4,7 +4,7 @@ describe('Create New Cas de Test', () => {
     const folderName = `Nouveau dossier automatique-${timestamp}`; 
     const testCaseName = `Nouveau Cas de Test automatique-${timestamp}`;
 
-    cy.login('admin', 'admin')
+    cy.login('admin')
     cy.goTo('menuCasDeTest')  
     cy.contains("Ragnarok").click()
     cy.addFolder(folderName, "Nouvelle description automatique", "Ajouter")

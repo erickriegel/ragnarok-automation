@@ -4,7 +4,7 @@ describe('Create New Requirement', () => {
     const folderName = `Nouveau dossier automatique-${timestamp}`
     const requirementName = `Nouvelle exigence automatique-${timestamp}`
 
-    cy.login('admin', 'admin')
+    cy.login('admin')
     cy.goTo('menuExigences')  
     cy.contains("Ragnarok").click()
     cy.addFolder(folderName, "Nouvelle description automatique", "Ajouter")

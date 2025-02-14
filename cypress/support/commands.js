@@ -24,10 +24,13 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-Cypress.Commands.add('login', (username, password) => {
+Cypress.Commands.add('login', (role) => {
+    cy.fixture('users').then((users) => {
+      const user = users[role];
+
     cy.visit('/')
-    cy.get('[formcontrolname="login"]').type(username)
-    cy.get('[formcontrolname="password"]').type(password)
+    cy.get('[formcontrolname="login"]').type(user.username)
+    cy.get('[formcontrolname="password"]').type(user.password)
     cy.get('#submit-login-form')
       .should('exist')
       .click()
@@ -35,6 +38,7 @@ Cypress.Commands.add('login', (username, password) => {
     
     cy.get('[data-test-element-id="show-welcome-message-button"]')
     cy.get('[data-test-element-id="show-dashboard-button"]')
+    });
   })
 
   Cypress.Commands.add('logout', () => {
