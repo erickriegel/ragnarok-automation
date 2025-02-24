@@ -14,6 +14,7 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
+import 'cypress-wait-until';
 import './commands'
 import './navigation'
 import './creation'
