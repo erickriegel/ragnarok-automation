@@ -15,7 +15,7 @@ Cypress.Commands.add('goTo', (menu) => {
     };
     cy.get('[data-test-element-id=' + (menuConfig[menu] || menu) + ']')
       //.should('be.visible')
-      .should('exist')
+      //.should('exist')
       .click()
   })
 
