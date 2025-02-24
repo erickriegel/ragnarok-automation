@@ -4,15 +4,15 @@ describe('Navigate from main page', () => {
       cy.goTo('menuExigences')
       //cy.wait(4000);  
       //cy.url().should('include', '/requirement-workspace')
-      cy.location('pathname', { timeout: 10000 }).should('include', '/requirement-workspace');
+      cy.location('pathname', { timeout: 10000 }).should('eq', '/requirement-workspace');
       cy.goTo('menuCasDeTest')
       //cy.wait(4000);  
       //cy.url().should('include', '/test-case-workspace')
-      cy.location('pathname', { timeout: 10000 }).should('include', '/test-case-workspace');
+      cy.location('pathname', { timeout: 10000 }).should('eq', '/test-case-workspace');
       cy.goTo('menuExecutions')  
       //cy.wait(4000);
       //cy.url().should('include', '/campaign-workspace')
-      cy.location('pathname', { timeout: 10000 }).should('include', '/campaign-workspace');
+      cy.location('pathname', { timeout: 10000 }).should('eq', '/campaign-workspace');
       cy.goTo('menuActions')  
       cy.closeDialogBox()
       cy.logout()
